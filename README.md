@@ -28,7 +28,8 @@ Detailed documentation is maintained in Notion:
 
 
 
-<img width="2880" height="1558" alt="image" src="https://github.com/user-attachments/assets/14ebc989-4016-4f4e-9e62-bda30b28b313" />
+<img width="2872" height="2632" alt="image" src="https://github.com/user-attachments/assets/8a9f3524-1baa-4060-b77c-0077fefd94cd" />
+
 
 
 
