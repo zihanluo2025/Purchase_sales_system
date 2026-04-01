@@ -1,6 +1,6 @@
 # LedgerOne
 
-- Online : https://erp.luozihan.space
+- Online : https://ledgerone.luozihan.space
 - Account: admin@example.com
 - Password: Admin12345.
 
