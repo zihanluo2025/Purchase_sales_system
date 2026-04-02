@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import "./globals.css";
 import { Inter } from "next/font/google";
+import { Toaster } from "@/components/ui/toaster";
 
 const fontSans = Inter({
   subsets: ["latin"],
@@ -22,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={fontSans.variable}>
-      <body className="antialiased font-sans">{children}</body>
+      <body className="antialiased font-sans">{children} <Toaster /></body>
     </html>
   );
 }

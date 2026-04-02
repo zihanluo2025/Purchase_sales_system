@@ -8,6 +8,8 @@ import { Mail, Lock, Fingerprint, ArrowRight } from "lucide-react";
 import { startHostedLogin, isSignedIn, loginWithPassword } from "@/lib/auth";
 
 import { Button } from "@/components/ui/button";
+import { toastError, toastSuccess } from "@/lib/tools/toast";
+
 
 
 export default function LoginPage() {
@@ -25,17 +27,18 @@ export default function LoginPage() {
 
     const handleLogin = async () => {
         if (!email || !password) {
-            alert("Please enter email and password");
+            toastError("Please enter email and password");
             return;
         }
 
         try {
             await loginWithPassword(email, password);
+            toastSuccess("Login successful");
 
             router.replace("/dashboard");
         } catch (err) {
             console.error(err);
-            alert("Login failed");
+            toastError("Login failed");
         }
     };
 
