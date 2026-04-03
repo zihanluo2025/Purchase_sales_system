@@ -29,17 +29,30 @@ export default function KpiCard({
     badge,
     footer,
     suffixText,
-    customContent
+    customContent,
+    className,
+    valueClassName,
+    descriptionClassName,
+    icon,
+    trend
 }: {
     title: string;
     value: string;
     suffix?: string;
     description?: string;
-    rightIcon: React.ReactNode;
+    rightIcon?: React.ReactNode;
     badge?: React.ReactNode;
     footer?: React.ReactNode;
     suffixText?: React.ReactNode;
     customContent?: React.ReactNode;
+    className?: string;
+    valueClassName?: string;
+    descriptionClassName?: string;
+    icon?: React.ReactNode;
+    trend?: {
+        value: string;
+        positive?: boolean;
+    };
 }) {
     return (
         <Card className="rounded-l  bg-white shadow-none">

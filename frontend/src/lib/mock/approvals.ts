@@ -4,7 +4,17 @@ import type {
   CompletedApprovalItem,
   PendingApprovalItem,
 } from "@/types/approval";
-import type { CardItem } from "@/types/card";
+
+
+type CardTrendType = "positive" | "warning" | "neutral" | "negative";
+
+type CardItem = {
+    label: string;
+    iconSrc?: string;
+    value: string | number;
+    trendType?: CardTrendType;
+    footer?: string;
+};
 
 export function buildPendingApprovalCards(list = pendingApprovalsMock): CardItem[] {
   const totalPending = list.length;
