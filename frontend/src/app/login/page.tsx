@@ -14,8 +14,8 @@ import { toastError, toastSuccess, toastWarning } from "@/lib/tools/toast";
 
 export default function LoginPage() {
     const router = useRouter();
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+    const [email, setEmail] = useState("admin@example.com");
+    const [password, setPassword] = useState("Admin12345.");
 
     useEffect(() => {
         (async () => {
