@@ -21,9 +21,9 @@ export const NAV: NavItem[] = [
     label: "Master Data",
     icon: Boxes,
     children: [
-      { href: "/products", label: "Products" },
-      { href: "/suppliers", label: "Suppliers" },
-      { href: "/customers", label: "Customers" },
+      { href: "/masterData/products", label: "Products" },
+      { href: "/masterData/suppliers", label: "Suppliers" },
+      { href: "/masterData/customers", label: "Customers" },
     ],
   },
 
