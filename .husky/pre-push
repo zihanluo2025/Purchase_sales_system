@@ -1,0 +1,39 @@
+#!/bin/sh
+
+echo "Detecting changed files for pre-push checks..."
+
+UPSTREAM=$(git rev-parse --abbrev-ref --symbolic-full-name @{u} 2>/dev/null)
+
+if [ -n "$UPSTREAM" ]; then
+  CHANGED_FILES=$(git diff --name-only "$UPSTREAM"...HEAD)
+else
+  echo "No upstream branch found, fallback to changed files in last commit."
+  CHANGED_FILES=$(git diff --name-only HEAD~1 HEAD 2>/dev/null)
+fi
+
+echo "Changed files:"
+echo "$CHANGED_FILES"
+
+RUN_FRONTEND=false
+RUN_BACKEND=false
+
+echo "$CHANGED_FILES" | grep -q '^frontend/' && RUN_FRONTEND=true
+echo "$CHANGED_FILES" | grep -q '^backend/' && RUN_BACKEND=true
+
+if [ "$RUN_FRONTEND" = false ] && [ "$RUN_BACKEND" = false ]; then
+  echo "No frontend/backend changes detected. Skipping checks."
+  exit 0
+fi
+
+if [ "$RUN_FRONTEND" = true ]; then
+  echo "Running frontend checks..."
+  npm run frontend:check || exit 1
+fi
+
+if [ "$RUN_BACKEND" = true ]; then
+  echo "Running backend checks..."
+  npm run backend:build || exit 1
+  npm run backend:test || exit 1
+fi
+
+echo "Pre-push checks passed."
