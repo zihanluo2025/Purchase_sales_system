@@ -33,6 +33,8 @@ Detailed documentation is maintained in Notion:
 
 
 <img width="2240" height="1006" alt="image" src="https://github.com/user-attachments/assets/8cdc08cb-ddb1-4e16-bfc3-77cf1b752007" />
+<img width="2880" height="1558" alt="image" src="https://github.com/user-attachments/assets/e7d3d95b-4aba-4c16-977e-d3d6aaa9f217" />
+
 
 
 
